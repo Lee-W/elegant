@@ -109,6 +109,9 @@
                 <div class="recent-posts-posted">
                     posted in
                     <a href="{{ SITEURL }}/{{ CATEGORIES_URL }}#{{ article.category.slug }}-ref">{{ article.category }}</a>
+                    {% if 'post_stats' in PLUGINS %}
+                     ( {{ article.stats['read_mins'] }} min read )
+                    {% endif %}
                     <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
                 </div>
                 {% if RECENT_ARTICLE_SUMMARY %}

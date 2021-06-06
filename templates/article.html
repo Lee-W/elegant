@@ -119,6 +119,10 @@
             {% endif %}
             {% include '_includes/last_updated.html' %}
             {% include '_includes/series.html' %}
+            {% if 'post_stats' in PLUGINS %}
+                <h4>Read Time</h4>
+                {{ article.stats['read_mins'] }} min
+            {% endif %}
             {% if article.category|trim|count > 0 %}
             <h4>Category</h4>
             {% from '_includes/_defaults.html' import CATEGORIES_URL with context %}

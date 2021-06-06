@@ -54,17 +54,17 @@ All categories of the {{ SITENAME|striptags|e }} blog.
                         <ul class="list-articles-under-tag-category">
                             {% for article in articles %}
                             <li itemscope>
-                                    <a href="{{ SITEURL }}/{{ article.url }}">
-                                        {{ article.title }}
-                                        {% if article.subtitle %}
-                                        <small class="subtitle">
-                                            {{ article.subtitle }}
-                                        </small>
-                                        {% endif %}
-                                    </a>
                                 <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">
                                     {{ article.locale_date }}
                                 </time>
+                                <a href="{{ SITEURL }}/{{ article.url }}">
+                                    {{ article.title }}
+                                    {% if article.subtitle %}
+                                    <small class="subtitle">
+                                        {{ article.subtitle }}
+                                    </small>
+                                    {% endif %}
+                                </a>
                             </li>
                             {% endfor %}
                         </ul>
